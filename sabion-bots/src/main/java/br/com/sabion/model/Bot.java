@@ -25,6 +25,9 @@ public class Bot implements DTO {
 	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="bot")
 	private List<Mensagem> mensagens;
 	
+	@OneToMany(mappedBy="bot")
+	private List<Conversa> conversas;
+	
 	public Bot() {
 		
 	}
@@ -48,6 +51,14 @@ public class Bot implements DTO {
 
 	public void setMensagens(List<Mensagem> mensagens) {
 		this.mensagens = mensagens;
+	}
+
+	public List<Conversa> getConversas() {
+		return conversas;
+	}
+
+	public void setConversas(List<Conversa> conversas) {
+		this.conversas = conversas;
 	}
 
 }
