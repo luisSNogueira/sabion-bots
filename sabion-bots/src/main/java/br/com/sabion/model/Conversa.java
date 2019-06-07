@@ -31,6 +31,10 @@ public class Conversa implements DTO {
 	
 	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="bot")
 	private List<MsgDeConversa> mensagens;
+	
+	public Conversa() {
+		
+	}
 
 	@Override
 	public Long getId() {
